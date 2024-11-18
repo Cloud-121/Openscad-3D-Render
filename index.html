@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenSCAD Viewer</title>
+    <script src="https://cdn.jsdelivr.net/npm/@jscad/openjscad"></script>
+</head>
+<body>
+    <h1>OpenSCAD Viewer</h1>
+    <div id="viewer" style="width: 100%; height: 500px;"></div>
+    <script>
+        // Example: Render a cube
+        const viewerElement = document.getElementById('viewer');
+        const api = new jscad.viewer.Viewer({ container: viewerElement });
+        
+        const design = () => jscad.primitives.cube({ size: 10 });
+        api.render(design);
+    </script>
+</body>
+</html>
